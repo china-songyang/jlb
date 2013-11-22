@@ -81,7 +81,7 @@
 <div class="con7">
 	<!-- 最新资讯 -->
 	<div class="con8">
-	<p class="xmore"><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/more_01.png" border="0" /></a></p>
+	<p class="xmore"><a href="#" id="newsMore">更多</a></p>
 	<div class="con8_02" ><ul id="news"></ul>
 	</div>
 	</div>
