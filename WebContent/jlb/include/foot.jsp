@@ -41,9 +41,22 @@
 				location="./newlist.jsp?cid=ccgdzs.newlist";
 			}
 </script>
-<div style="position: absolute;z-index:9999;color:#b20505;margin:40px 0px 0px 400px;font-size: 18px" >累计访问量：<%=count%></div>
-	<div id="bq">
-  </div><!--版权-->
-    <div class="clear"></div>
+<div class="links">
+<a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_20.jpg" border="0" /></a><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_20.jpg" border="0" /></a><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_20.jpg" border="0" /></a><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_20.jpg" border="0" /></a><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_20.jpg" border="0" /></a><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_20.jpg" border="0" /></a><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_20.jpg" border="0" /></a></div>
+<div class="footer">
+<ul>
+<li><img src="<%=request.getContextPath()%>/jlb/images/bottom_01.png" /></li>
+<li><img src="<%=request.getContextPath()%>/jlb/images/bottom_02.png" /></li>
+<li><img src="<%=request.getContextPath()%>/jlb/images/bottom_03.png" /></li>
+<li><img src="<%=request.getContextPath()%>/jlb/images/bottom_04.png" /></li>
+<li><img src="<%=request.getContextPath()%>/jlb/images/bottom_05.png" /></li>
+<li><img src="<%=request.getContextPath()%>/jlb/images/bottom_06.png" /></li>
+</ul>
+</div>
+<div class="footer_text">
+<p>Copyright (R)2013-2016 All rights reserved </p>
+<p>长春市金兰宝科技有限责任公司 http://www.ccjlbkj.com | 0431-81756788  81756781</p>
+<p>蜀ICP备09004450 网站总访问数：25971436人次</p>
+</div>
  
   

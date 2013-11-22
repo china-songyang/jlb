@@ -15,26 +15,7 @@
 
 <body>
 <div class="body">
-<div class="top">
-<div class="logo"></div>
-<div class="search">搜索
-  <input type="text" class="input"name="textfield" />
-  <input name="" type="button" class="button" id="GO" value="GO" />
-</div>
-</div>
-<div class="nav2">
-<ul>
-<li><a href="#" id="aa">首页</a></li>
-<li><a href="#" id="b">公司概况</a></li>
-<li><a href="#" id="c">最新资讯</a></li>
-<li><a href="#" id="d">服务项目</a></li>
-<li><a href="#" id="e">成功案例</a></li>
-<li><a href="#" id="f">技术支持</a></li>
-<li><a href="#" id="g">软件下载</a></li>
-<li><a href="#" id="h">在线留言</a></li>
-<li><a href="#" id="i">联系我们</a></li>
-</ul>
-</div>
+<%@ include file="/jlb/include/top.jsp" %>
 <div class="con1">
 <div class="con2">
 <div id="hotpic">
@@ -180,28 +161,8 @@ tab.onmouseout=function() {MyMar=setInterval(Marquee,speed)};
 
 </div>
 <div id="footer">
-<div class="links">
-<a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_20.jpg" border="0" /></a><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_20.jpg" border="0" /></a><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_20.jpg" border="0" /></a><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_20.jpg" border="0" /></a><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_20.jpg" border="0" /></a><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_20.jpg" border="0" /></a><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_20.jpg" border="0" /></a></div>
-<div class="footer">
-<ul>
-<li><img src="<%=request.getContextPath()%>/jlb/images/bottom_01.png" /></li>
-<li><img src="<%=request.getContextPath()%>/jlb/images/bottom_02.png" /></li>
-<li><img src="<%=request.getContextPath()%>/jlb/images/bottom_03.png" /></li>
-<li><img src="<%=request.getContextPath()%>/jlb/images/bottom_04.png" /></li>
-<li><img src="<%=request.getContextPath()%>/jlb/images/bottom_05.png" /></li>
-<li><img src="<%=request.getContextPath()%>/jlb/images/bottom_06.png" /></li>
-</ul>
+<%@ include file="/jlb/include/foot.jsp" %>
 </div>
-<div class="footer_text">
-<p>Copyright (R)2013-2016 All rights reserved </p>
-<p>长春市金兰宝科技有限责任公司 http://www.ccjlbkj.com | 0431-81756788  81756781</p>
-<p>蜀ICP备09004450 网站总访问数：25971436人次</p>
-</div>
-</div>
-<script>
-for (i=1;i<60;i++){
-
-</script>
 
 <div id="KeFuDiv" class="KeFuDiv">
   <div><img src="<%=request.getContextPath()%>/jlb/images/up_001.gif" width="105" border="0" usemap="#Map" style="cursor:move;" title="拖动" onmousedown="MoveDiv(KeFuDiv,event);"></div>
