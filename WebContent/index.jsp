@@ -11,6 +11,22 @@
  <script src="<%=request.getContextPath()%>/jlb/js/jquery.litenav.js" type="text/javascript"></script>
  <script type="text/javascript" src="<%=request.getContextPath()%>/jlb/js/lrtk.js"></script>
  <link href="<%=request.getContextPath()%>/jlb/css/index.css" rel="stylesheet" type="text/css" />
+ <script type="text/javascript">
+ $(function() {
+		//获得文章列表
+		getArticleList("profile",450,{aid:"jlb.profile",start:'0',offset:'1'}, 1);
+		
+		getArticleList("news",16,{aid:"jlb.information ",start:'0',offset:'6'}, 2);
+		getArticleList("service",18,{aid:"jlb.service",start:'0',offset:'6'}, 2);
+		getArticleList("support",18,{aid:"jlb.support",start:'0',offset:'6'}, 2);
+		getArticleList("download",21,{aid:"jlb.download",start:'0',offset:'6'}, 2);
+		getArticleList("s_people",20,{aid:"door.people",start:'0',offset:'6'});
+		
+		getArticleList("s_xgqy",20,{aid:"door.xgqy",start:'0',offset:'7'});
+		getArticleList("s_zsjm",15,{aid:"door.zsjm",start:'0',offset:'6'});
+		getArticleList("s_zhxx",15,{aid:"door.zhxx",start:'0',offset:'6'});
+		});
+ </script>
 </head>
 
 <body>
@@ -52,67 +68,40 @@
 </div>
 </div>
 <div class="con4">
-<div class="con5">    <a href="#">长春市金兰宝科技有限责任公司座落于人杰地灵的长春，是以综合强弱电布线工程、安防系统组建、楼宇智能化
-安装、电脑组装及维护、电子技术开发与支持、光学设备安装维修、智能触摸系统安装、多媒体网络组建及策划为主的
-一家新兴企业。
-    长春金兰宝科技有限责任公司系国完胜级重点高新技术企业，公司致力于智能综合布线技术、生产、销售及服务。
-公司拥有领先的生产、销售及服务。公司拥有领先的、检测设备，生产规模庞大，年销售额约二百万元。在国内拥有领先
-技术，同时在国内广泛引进销售、生产、研发、技术等行业人才......</a></div>
+<!-- 公司简介 -->
+<div class="con5" id="profile"></div>
+
 <div class="con6">
-<p>18088888888</p>
-<p>0431-81756788  81756781</p>
-<p>18088888888</p>
-<p>18088888888@qq.com</p>
+<p>15948321834</p>
+<p>0431-81756788</p>
+<p>1084809237</p>
+<p>1084809237@qq.com</p>
 </div>
 </div>
 <div class="con7">
-<div class="con8">
-<p class="xmore"><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/more_01.png" border="0" /></a></p>
-<div class="con8_02"><ul>
-<li><span>20113-11-13</span><a href="#">最新资讯滚动(6条)最新资讯滚动</a></li>
-<li><span>20113-11-08</span><a href="#">最新资讯(6条)最新资讯滚动</a></li>
-<li><span>20113-11-05</span><a href="#">最新6条)最新资讯滚动</a></li>
-<li><span>20113-11-02</span><a href="#">最新资讯滚动(6条)最新资讯滚动</a></li>
-<li><span>20113-11-02</span><a href="#">最新资讯(6条)最新资讯滚动</a></li>
-<li><span>20113-11-01</span><a href="#">最新资讯滚动(6条)最新</a></li>
-</ul></div>
-
-</div>
-<div class="con9">
-<p class="xmore"><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/more_02.png" border="0" /></a></p>
-<ul>
-<li><a href="#">最新资讯滚动(6条)最新资讯滚动</a></li>
-<li><a href="#">最新资讯(6条)最新资讯滚动</a></li>
-<li><a href="#">最新6条)最新资讯滚动</a></li>
-<li><a href="#">最新资讯滚动(6条)最新资讯滚动</a></li>
-<li><a href="#">最新资讯(6条)最新资讯滚动</a></li>
-<li><a href="#">最新资讯滚动(6条)最新</a></li>
-</ul>
-</div>
+	<!-- 最新资讯 -->
+	<div class="con8">
+	<p class="xmore"><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/more_01.png" border="0" /></a></p>
+	<div class="con8_02" ><ul id="news"></ul>
+	</div>
+	</div>
+	<!-- 服务项目 -->
+	<div class="con9">
+	<p class="xmore"><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/more_02.png" border="0" /></a></p>
+		<ul id="service"></ul>
+	</div>
 </div>
 <div class="con10">
-<div class="con11">
-<p class="xmore"><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/more_03.png" border="0" /></a></p>
-<ul>
-<li><a href="#">最新资讯滚动(6条)最新资讯滚动</a></li>
-<li><a href="#">最新资讯(6条)最新资讯滚动</a></li>
-<li><a href="#">最新6条)最新资讯滚动</a></li>
-<li><a href="#">最新资讯滚动(6条)最新资讯滚动</a></li>
-<li><a href="#">最新资讯(6条)最新资讯滚动</a></li>
-<li><a href="#">最新资讯滚动(6条)最新</a></li>
-</ul>
-</div>
-<div class="con12">
-<p class="xmore"><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/more_04.png" border="0" /></a></p>
-<ul>
-<li><a href="#">最新资讯滚动(6条)最新资讯滚动</a></li>
-<li><a href="#">最新资讯(6条)最新资讯滚动</a></li>
-<li><a href="#">最新6条)最新资讯滚动</a></li>
-<li><a href="#">最新资讯滚动(6条)最新资讯滚动</a></li>
-<li><a href="#">最新资讯(6条)最新资讯滚动</a></li>
-<li><a href="#">最新资讯滚动(6条)最新</a></li>
-</ul>
-</div>
+	<!-- 技术支持 -->
+	<div class="con11">
+	<p class="xmore"><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/more_03.png" border="0" /></a></p>
+	<ul id="support"></ul>
+	</div>
+	<!-- 软件下载 -->
+	<div class="con12">
+	<p class="xmore"><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/more_04.png" border="0" /></a></p>
+	<ul id="download"></ul>
+	</div>
 </div>
 <div class="con13">
 

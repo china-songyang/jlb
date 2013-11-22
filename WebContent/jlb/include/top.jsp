@@ -4,72 +4,31 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <script type="text/javascript">
-			$(function() {
-				//获得菜单
-				$.post("<%=request.getContextPath()%>/webdo/menu/menulist.do", 
-						{rootcid:"door"}, 
-						function(json){
-							var str = "";
-							var num = json.length;
-							if(num>0){
-								for(var i=0;i<num;i++) {
-									
-									var id = json[i].id;
-									var url = json[i].path;
-									var title = json[i].name;
-									if(url!=null&&url.Trim()!="default"&&url.Trim()!=""){
-										if(url.Trim().indexOf("http://")<0){
-											if(url.Trim().indexOf("?")<0){
-												url="<%=request.getContextPath()%>/door/"+url.Trim()+"?cid="+id;
-											}else{
-												if(url.Trim().indexOf("cid")<0){
-													url="<%=request.getContextPath()%>/door/"+url.Trim()+"&cid="+id;
-												}else{
-													url="<%=request.getContextPath()%>/door/"+url.Trim();
-												}
-											}
-										}else{
-											url=url.Trim();
-										}
-									}else{
-										url="javascript:void(0);";
-									}
-									var __id = "<%= request.getParameter("cid")%>";
-									if (__id == null) {
-										__id = id;
-									}
-									if (__id==id) {
-										str=$("#menulist").html()+"<li><a href=\""+url+"\" style=\"color:#f0d065\">"+title+"</a></li>";
-									}else{
-										str=$("#menulist").html()+"<li><a href=\""+url+"\">"+title+"</a></li>";
-									}
-									
-									$("#menulist").html(str);
-								}
-							}
-						}, 
-						"json");
-			});
-</script>
-<script type="text/javascript">
-function getArticleList(divid,size,opt){
-	$("#"+divid+"More").attr("href","<%=request.getContextPath()%>/door/list.jsp?cid="+opt.aid);
+function getArticleList(divid,size,opt,type){
+	$("#"+divid+"More").attr("href","<%=request.getContextPath()%>/jlb/list.jsp?cid="+opt.aid);
 	//获得文章列表
+
 	$.post("<%=request.getContextPath()%>/webdo/article/articleListByPage.do", 
 			opt, 
+			
 			function(json){
 				var str = "";
 				$("#"+divid).html(str);
 				var num = json.rows.length;
 				var aid = "";
 				if(num>0){
-					for(var i=0;i<num;i++) {
+					for(var i=0;i<num;i++) { 
 						var id = json.rows[i].id;
 						var image = json.rows[i].image;
 						var title = size!=null&&size!=""&&json.rows[i].title.length>size?json.rows[i].title.substr(0,size)+"...":json.rows[i].title;
+						var text = size!=null&&size!=""&&json.rows[i].text.length>size?json.rows[i].text.substr(0,size)+"...":json.rows[i].text;
 						var datetime = json.rows[i].createTime.substr(0,10);
-						var url="<%=request.getContextPath()%>/door/detail.jsp?cid="+opt.aid+"&did="+id;
-						str=$("#"+divid).html()+"<li><a href=\""+url+"\">·"+title+"</a></li>";
+						var url="<%=request.getContextPath()%>/jlb/detail.jsp?cid="+opt.aid+"&did="+id;
+						if(type == 1){
+							str=$("#"+divid).html()+"<a href=\""+url+"\">"+text+"</li>";
+						}else {
+							str=$("#"+divid).html()+"<li><a href=\""+url+"\">"+title+"</a></li>"; 
+						}
 						$("#"+divid).html(str);
 					}
 				}

@@ -55,7 +55,7 @@
 </div>
 <div class="footer_text">
 <p>Copyright (R)2013-2016 All rights reserved </p>
-<p>长春市金兰宝科技有限责任公司 http://www.ccjlbkj.com | 0431-81756788  81756781</p>
+<p>长春市金兰宝科技有限公司 http://www.ccjlbkj.com | 0431-81756788  81756781</p>
 <p>蜀ICP备09004450 网站总访问数：25971436人次</p>
 </div>
  
