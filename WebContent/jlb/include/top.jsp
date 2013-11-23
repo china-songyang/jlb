@@ -26,8 +26,10 @@ function getArticleList(divid,size,opt,type){
 						var url="<%=request.getContextPath()%>/jlb/detail.jsp?cid="+opt.aid+"&did="+id;
 						if(type == 1){
 							str=$("#"+divid).html()+"<a href=\""+url+"\">"+text+"</li>";
-						}else {
+						}else if(type == 2){
 							str=$("#"+divid).html()+"<li><a href=\""+url+"\">"+title+"</a></li>"; 
+						} else{
+							str=$("#"+divid).html()+"<li><a href=\""+url+"\"><img src=\""+image+"\" width=\"148\" height=\"108\"/></a></li>"; 
 						}
 						$("#"+divid).html(str);
 					}
@@ -46,7 +48,7 @@ function getArticleList(divid,size,opt,type){
 </div>
 <div class="nav2">
 <ul>
-<li><a href="#" id="aa">首页</a></li>
+<li><a href="<%=request.getContextPath()%>/index.jsp" id="aa">首页</a></li>
 <li><a href="#" id="b">公司概况</a></li>
 <li><a href="#" id="c">最新资讯</a></li>
 <li><a href="#" id="d">服务项目</a></li>

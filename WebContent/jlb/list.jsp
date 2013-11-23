@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@page import="com.saturn.website.PaginationUtils"%>
+<%@page import="com.saturn.website.Article"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -11,6 +13,68 @@
  <script type="text/javascript" src="<%=request.getContextPath()%>/jlb/js/lrtk.js"></script>
  <link href="<%=request.getContextPath()%>/jlb/css/index.css" rel="stylesheet" type="text/css" />
  <link href="<%=request.getContextPath()%>/jlb/css/style.css" rel="stylesheet" type="text/css" />
+ <script type="text/javascript" src="<%=request.getContextPath()%>/jlb/js/pageMenuBar.js"></script>
+ <script type="text/javascript">
+var cid = '<%=request.getParameter("cid")%>';
+var did = '<%=request.getParameter("did")%>';
+var opt={aid:cid,start:'0',offset:'25'};
+$(function() {
+	getArticleListByPage(cid,1,0);
+	getMenuTitle(cid);
+	});
+	
+<%-- function getMenuTitle(cid){
+	//获得菜单标题
+	$.post("<%=request.getContextPath()%>/webdo/menu/menubycid.do", 
+			{cid:cid}, 
+			function(json){
+				$("#topmenu").html(json.name);
+				$("#topmenu_z").html(json.name);
+			}, 
+			"json");
+}
+ --%>
+function getArticleListByPage(aid,pageNo,start){
+	opt.start=start;
+	//获得文章列表
+	$.post("<%=request.getContextPath()%>/webdo/article/articleListByPage.do", 
+			opt,
+			function(json){
+				var str = "";
+				$("#artlist").html(str);
+				var num = json.rows.length;
+				var aid = "";
+				if(num>0){
+					for(var i=0;i<num;i++) {
+						var id = json.rows[i].id;
+						var image = json.rows[i].image;
+						var title = json.rows[i].title;
+						var datetime = json.rows[i].createTime.substr(0,10);
+						var url="<%=request.getContextPath()%>/jlb/detail.jsp?cid="+cid+"&did="+id;
+						//aid 赋值
+						if (did == null||did==""||did=="null") {
+							//aid = "ccgdzs.new01.n1";
+							did = id;
+						}
+						str=$("#artlist").html()+"<li><a href=\""+url+"\">"+title+"</a><span style=\"float:right;margin-right:20px;\">"+datetime+"</span></li>";
+                    
+						$("#artlist").html(str);
+					}
+				}
+				var totle = json.total;
+				//分页
+				$("#pagemenu").pageMenuBar({
+					rowPerPage:parseInt(opt.offset),
+					sumRow:parseInt(totle), 
+					pageNo:parseInt(pageNo),
+					state:1,
+					func:'getArticleListByPage',
+					args:'"'+cid+'"'
+				});
+			}, 
+			"json");
+}
+</script>
 </head>
 
 <body>
@@ -29,69 +93,16 @@
 <h3>Contact</h3></li>
 </ul>
 </div>
-<div class="con22">
-<div class="con22_top"></div>
-<div class="con22_main">
-<ul>
-<li><a href="fwxm_xx.html">服务项目列表</a></li>
-<li><a href="#">服务项目列表</a></li>
-<li><a href="#">服务项目列表</a></li>
-<li><a href="#">服务项目列表</a></li>
-<li><a href="#">服务项目列表</a></li>
-<li><a href="#">服务项目列表</a></li>
-<li><a href="#">服务项目列表</a></li>
-<li><a href="#">服务项目列表</a></li>
-<li><a href="#">服务项目列表</a></li>
-<li><a href="#">服务项目列表</a></li>
-</ul>
-<p><span>[<a href="#" id="span_text">1</a>]</span><span>[<a href="#">2</a>]</span><span>[<a href="#">3</a>]</span><span>[<a href="#">4</a>]</span><span>[<a href="#">5</a>]</span><span><a href="#">下一页</a></span><span><a href="#">末页</a></span><span>共5页</span></p>
+ 		<div class="con22">
+ 			<div class="con22_top"></div>
+           	  <div class="con22_main">
+           	  <ul id="artlist"> </ul>
+           	  <p><span id="pagemenu"></span></p>
+            </div>
+            <div class="con22_bottom"></div>
+        </div><!--右侧-->
 </div>
-<div class="con22_bottom"></div>
-</div>
-</div>
-<div class="con13">
-<div id="demo">
-	<div id="indemo">
-	<div id="demo1">
-		<ul>
-			<li><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_13.jpg" width="148" height="108" /></a></li>
-			<li><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_14.jpg" width="147" height="109" /></a></li>
-			<li><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_15.jpg" width="148" height="109" /></a></li>
-			<li><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_16.jpg" width="148" height="109" /></a></li>
-			<li><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_17.jpg" width="148" height="109" /></a></li>
-		</ul>
-	</div>
-	<div id="demo2">
-		<ul>
-			<li><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_13.jpg" width="148" height="108" /></a></li>
-			<li><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_15.jpg" width="148" height="109" /></a></li>
-			<li><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_16.jpg" width="148" height="109" /></a></li>
-			<li><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_17.jpg" width="148" height="109" /></a></li>
-			<li><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_13.jpg" width="148" height="108" /></a></li>
-		</ul>
-	</div>
-	</div>
-</div>
-<script>
-<!--
-var speed=10;
-var tab=document.getElementById("demo");
-var tab1=document.getElementById("demo1");
-var tab2=document.getElementById("demo2");
-tab2.innerHTML=tab1.innerHTML;
-function Marquee(){
-if(tab2.offsetWidth-tab.scrollLeft<=0)
-tab.scrollLeft-=tab1.offsetWidth
-else{
-tab.scrollLeft++;
-}
-}
-var MyMar=setInterval(Marquee,speed);
-tab.onmouseover=function() {clearInterval(MyMar)};
-tab.onmouseout=function() {MyMar=setInterval(Marquee,speed)};
--->
-</script>				
-</div>
+<%-- <%@ include file="/jlb/include/roll.jsp" %> --%>
 
 </div>
 <div id="footer">

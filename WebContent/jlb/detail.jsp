@@ -6,9 +6,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<%@ include file="../include/include.jsp" %>
+ <script src="<%=request.getContextPath()%>/jlb/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+ <script src="<%=request.getContextPath()%>/jlb/js/jquery.litenav.js" type="text/javascript"></script>
+ <script src="<%=request.getContextPath()%>/jlb/js/lrtk.js"></script>
+ <link href="<%=request.getContextPath()%>/jlb/css/index.css" rel="stylesheet" type="text/css" />
+ <link href="<%=request.getContextPath()%>/jlb/css/style.css" rel="stylesheet" type="text/css" />
 <title>详细信息</title>
-<link href="css/base.css" rel="stylesheet" type="text/css" />
+
 <script type="text/javascript">
 $(function() {
 	var cid = '<%=request.getParameter("cid")%>';
@@ -20,16 +24,19 @@ $(function() {
 				var id = json.id;
 				var titlez = json.title;
 				var text = json.text;
-				if(titlez==null||titlez.Trim()=="")
-					$("#titlez").html("");
+				var time = json.createTime;
+				if(titlez==null||titlez=="")
+					$("#title").html("");
 				else
-					$("#titlez").html(""+titlez);
-				
-				if(text==null||text.Trim()=="")
+					$("#title").html(""+titlez);
+				if(text==null||text=="")
 					$("#content").html("");
 				else
 					$("#content").html(text);
-
+				if(time == null || time == "")
+					$("#time").html("");
+				else
+					$("#time").html(""+time);
 			}, 
 			"json");
 	});
@@ -37,29 +44,50 @@ $(function() {
 </script>
 </head>
 <body>
-<p id="back-to-top"><a href="#top"><span style="background: url('images/top.png');"></span></a></p>
-<a name="top"></a>
-<div id="container">
-	<%@ include file="include/top.jsp" %>
-  	<div id="contant">
-    	<%@ include file="include/left.jsp" %>
-        <div class="right">
-        	<div class="rtnr">
-           	  <div class="xpmmt">
-        	<div class="xpmmtto">
-            	<h5 id="titlez"></h5>
-            </div>
-            <div class="ll">
-            	<div id="content" class="lanmu">
-                </div>
-            </div>
-            <div class="xpmmx"><img src="images/xpmm_x.jpg" width="719" height="4" /></div>
-        </div>
-            
-            </div>
-        </div><!--右侧-->
-    </div><!--内容区-->
- <%@ include file="include/foot.jsp" %>
-</div><!--容器-->
+<div class="body">
+<!-- 头文件 -->
+<%@ include file="/jlb/include/top.jsp" %>
+<div class="con20">
+<!-- 左侧文件 -->
+<%@ include file="/jlb/include/left.jsp" %>
+<div class="con22">
+<div class="con22_top"></div>
+<div class="con23_main">
+<h2 id="title"></h2>
+<span style="color:#606E7B;float:right;margin-right:50px;" >发布时间：<span id="time"></span></span>
+<br>
+<p id="content"></p>
+</div>
+<div class="con22_bottom"></div>
+</div>
+</div>
+<%--<%@ include file="/jlb/include/roll.jsp" %> --%>
+
+</div>
+<div id="footer">
+<%@ include file="/jlb/include/foot.jsp" %>
+</div>
+<div id="KeFuDiv" class="KeFuDiv">
+  <div><img src="<%=request.getContextPath()%>/jlb/images/up_001.gif" width="105" border="0" usemap="#Map" style="cursor:move;" title="拖动" onmousedown="MoveDiv(KeFuDiv,event);"></div>
+
+
+    <div class="KeFuTitle"><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/list_001.gif" /></a></div>
+
+    <div class="KeFuTitle"><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/list_001.gif" /></a></div>  
+
+    
+     <div class="KeFuTitle"><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/list_002.gif" /></a></div>
+<div class="div_img"><img src="<%=request.getContextPath()%>/jlb/images/bot_001.gif" border="0"></div>
+
+
+</div>
+
+<script>
+//初始位置
+gID("KeFuDiv").style.top = (document.documentElement.clientHeight - gID("KeFuDiv").offsetHeight)/2 +"px";
+gID("KeFuDiv").style.left = document.documentElement.clientWidth - gID("KeFuDiv").offsetWidth +"px";
+//开始滚动
+ScrollDiv('KeFuDiv');
+</script>
 </body>
 </html>

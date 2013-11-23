@@ -20,11 +20,8 @@
 		getArticleList("service",18,{aid:"jlb.service",start:'0',offset:'6'}, 2);
 		getArticleList("support",18,{aid:"jlb.support",start:'0',offset:'6'}, 2);
 		getArticleList("download",21,{aid:"jlb.download",start:'0',offset:'6'}, 2);
-		getArticleList("s_people",20,{aid:"door.people",start:'0',offset:'6'});
-		
-		getArticleList("s_xgqy",20,{aid:"door.xgqy",start:'0',offset:'7'});
-		getArticleList("s_zsjm",15,{aid:"door.zsjm",start:'0',offset:'6'});
-		getArticleList("s_zhxx",15,{aid:"door.zhxx",start:'0',offset:'6'});
+		getArticleList("case1",21,{aid:"jlb.case",start:'0',offset:'6'}, 3);
+		getArticleList("case2",21,{aid:"jlb.case",start:'6',offset:'12'}, 3);
 		});
  </script>
 </head>
@@ -87,19 +84,19 @@
 	</div>
 	<!-- 服务项目 -->
 	<div class="con9">
-	<p class="xmore"><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/more_02.png" border="0" /></a></p>
+	<p class="xmore"><a href="#" id="serviceMore"><img src="<%=request.getContextPath()%>/jlb/images/more_02.png" border="0" /></a></p>
 		<ul id="service"></ul>
 	</div>
 </div>
 <div class="con10">
 	<!-- 技术支持 -->
 	<div class="con11">
-	<p class="xmore"><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/more_03.png" border="0" /></a></p>
+	<p class="xmore"><a href="#" id="supportMore"><img src="<%=request.getContextPath()%>/jlb/images/more_03.png" border="0" /></a></p>
 	<ul id="support"></ul>
 	</div>
 	<!-- 软件下载 -->
 	<div class="con12">
-	<p class="xmore"><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/more_04.png" border="0" /></a></p>
+	<p class="xmore"><a href="#" id="downloadMore"><img src="<%=request.getContextPath()%>/jlb/images/more_04.png" border="0" /></a></p>
 	<ul id="download"></ul>
 	</div>
 </div>
@@ -108,21 +105,11 @@
 <div id="demo">
 	<div id="indemo">
 	<div id="demo1">
-		<ul>
-			<li><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_13.jpg" width="148" height="108" /></a></li>
-			<li><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_14.jpg" width="147" height="109" /></a></li>
-			<li><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_15.jpg" width="148" height="109" /></a></li>
-			<li><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_16.jpg" width="148" height="109" /></a></li>
-			<li><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_17.jpg" width="148" height="109" /></a></li>
+		<ul id="case1">
 		</ul>
 	</div>
 	<div id="demo2">
-		<ul>
-			<li><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_13.jpg" width="148" height="108" /></a></li>
-			<li><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_15.jpg" width="148" height="109" /></a></li>
-			<li><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_16.jpg" width="148" height="109" /></a></li>
-			<li><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_17.jpg" width="148" height="109" /></a></li>
-			<li><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_13.jpg" width="148" height="108" /></a></li>
+		<ul id="case2">
 		</ul>
 	</div>
 	</div>
