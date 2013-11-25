@@ -49,14 +49,14 @@ function getArticleList(divid,size,opt,type){
 <div class="nav2">
 <ul>
 <li><a href="<%=request.getContextPath()%>/index.jsp" id="aa">首页</a></li>
-<li><a href="#" id="b">公司概况</a></li>
-<li><a href="#" id="c">最新资讯</a></li>
-<li><a href="#" id="d">服务项目</a></li>
-<li><a href="#" id="e">成功案例</a></li>
-<li><a href="#" id="f">技术支持</a></li>
-<li><a href="#" id="g">软件下载</a></li>
+<li><a href="<%=request.getContextPath()%>/jlb/detail.jsp?cid=jlb.profile&did=588" id="b">公司概况</a></li>
+<li><a href="<%=request.getContextPath()%>/jlb/list.jsp?cid=jlb.information" id="c">最新资讯</a></li>
+<li><a href="<%=request.getContextPath()%>/jlb/list.jsp?cid=jlb.service" id="d">服务项目</a></li>
+<li><a href="" id="e">成功案例</a></li>
+<li><a href="<%=request.getContextPath()%>/jlb/list.jsp?cid=jlb.support" id="f">技术支持</a></li>
+<li><a href="<%=request.getContextPath()%>/jlb/list.jsp?cid=jlb.download" id="g">软件下载</a></li>
 <li><a href="#" id="h">在线留言</a></li>
-<li><a href="#" id="i">联系我们</a></li>
+<li><a href="<%=request.getContextPath()%>/jlb/detail.jsp?cid=jlb.contact&did=589" id="i">联系我们</a></li>
 </ul>
 </div>
     

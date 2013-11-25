@@ -6,13 +6,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
- <script src="<%=request.getContextPath()%>/jlb/js/jquery-1.9.1.min.js" type="text/javascript"></script>
- <script src="<%=request.getContextPath()%>/jlb/js/jquery.litenav.js" type="text/javascript"></script>
- <script src="<%=request.getContextPath()%>/jlb/js/lrtk.js"></script>
- <link href="<%=request.getContextPath()%>/jlb/css/index.css" rel="stylesheet" type="text/css" />
- <link href="<%=request.getContextPath()%>/jlb/css/style.css" rel="stylesheet" type="text/css" />
+<%@ include file="../include/include.jsp" %>
 <title>详细信息</title>
-
 <script type="text/javascript">
 $(function() {
 	var cid = '<%=request.getParameter("cid")%>';
@@ -67,27 +62,6 @@ $(function() {
 <div id="footer">
 <%@ include file="/jlb/include/foot.jsp" %>
 </div>
-<div id="KeFuDiv" class="KeFuDiv">
-  <div><img src="<%=request.getContextPath()%>/jlb/images/up_001.gif" width="105" border="0" usemap="#Map" style="cursor:move;" title="拖动" onmousedown="MoveDiv(KeFuDiv,event);"></div>
-
-
-    <div class="KeFuTitle"><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/list_001.gif" /></a></div>
-
-    <div class="KeFuTitle"><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/list_001.gif" /></a></div>  
-
-    
-     <div class="KeFuTitle"><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/list_002.gif" /></a></div>
-<div class="div_img"><img src="<%=request.getContextPath()%>/jlb/images/bot_001.gif" border="0"></div>
-
-
-</div>
-
-<script>
-//初始位置
-gID("KeFuDiv").style.top = (document.documentElement.clientHeight - gID("KeFuDiv").offsetHeight)/2 +"px";
-gID("KeFuDiv").style.left = document.documentElement.clientWidth - gID("KeFuDiv").offsetWidth +"px";
-//开始滚动
-ScrollDiv('KeFuDiv');
-</script>
+<%@ include file="/jlb/include/cs.jsp" %>
 </body>
 </html>

@@ -7,15 +7,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 <title>金兰宝科技有限公司</title>
- <script src="<%=request.getContextPath()%>/jlb/js/jquery-1.9.1.min.js" type="text/javascript"></script>
- <script src="<%=request.getContextPath()%>/jlb/js/jquery.litenav.js" type="text/javascript"></script>
- <script type="text/javascript" src="<%=request.getContextPath()%>/jlb/js/lrtk.js"></script>
- <link href="<%=request.getContextPath()%>/jlb/css/index.css" rel="stylesheet" type="text/css" />
+<%@ include file="/include/include.jsp" %>
  <script type="text/javascript">
  $(function() {
 		//获得文章列表
 		getArticleList("profile",450,{aid:"jlb.profile",start:'0',offset:'1'}, 1);
-		
 		getArticleList("news",16,{aid:"jlb.information ",start:'0',offset:'6'}, 2);
 		getArticleList("service",18,{aid:"jlb.service",start:'0',offset:'6'}, 2);
 		getArticleList("support",18,{aid:"jlb.support",start:'0',offset:'6'}, 2);
@@ -24,6 +20,24 @@
 		getArticleList("case2",21,{aid:"jlb.case",start:'6',offset:'12'}, 3);
 		});
  </script>
+ 
+ <!-- 最新资讯滚动 -->
+ <script type="text/javascript">
+ function AutoScroll(obj){
+		$(obj).find("ul:first").animate({
+			marginTop:"-19px"
+		},500,function(){
+			$(this).css({marginTop:"0px"}).find("li:first").appendTo(this);
+		});
+	}
+	$(document).ready(function(){
+		setInterval('AutoScroll("#scrollDiv")',2000);
+	});
+</script>
+<style type="text/css">
+#scrollDiv{min-height:25px;line-height:35px;}
+#scrollDiv li{height:25px;padding-left:10px;}
+</style>
 </head>
 
 <body>
@@ -77,10 +91,9 @@
 </div>
 <div class="con7">
 	<!-- 最新资讯 -->
-	<div class="con8">
-	<p class="xmore"><a href="#" id="newsMore">更多</a></p>
-	<div class="con8_02" ><ul id="news"></ul>
-	</div>
+	<div class="con8" id="scrollDiv">
+	<p class="xmore"><a href="#" id="newsMore"><img src="<%=request.getContextPath()%>/jlb/images/more_01.png" border="0" /></a></p>
+	<ul id="news"></ul>
 	</div>
 	<!-- 服务项目 -->
 	<div class="con9">
@@ -105,11 +118,11 @@
 <div id="demo">
 	<div id="indemo">
 	<div id="demo1">
-		<ul id="case1">
+		 <ul id="case1">
 		</ul>
 	</div>
 	<div id="demo2">
-		<ul id="case2">
+		<ul id="case1">
 		</ul>
 	</div>
 	</div>
@@ -139,28 +152,6 @@ tab.onmouseout=function() {MyMar=setInterval(Marquee,speed)};
 <div id="footer">
 <%@ include file="/jlb/include/foot.jsp" %>
 </div>
-
-<div id="KeFuDiv" class="KeFuDiv">
-  <div><img src="<%=request.getContextPath()%>/jlb/images/up_001.gif" width="105" border="0" usemap="#Map" style="cursor:move;" title="拖动" onmousedown="MoveDiv(KeFuDiv,event);"></div>
-
-
-    <div class="KeFuTitle"><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/list_001.gif" /></a></div>
-
-    <div class="KeFuTitle"><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/list_001.gif" /></a></div>  
-
-    
-     <div class="KeFuTitle"><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/list_002.gif" /></a></div>
-<div class="div_img"><img src="<%=request.getContextPath()%>/jlb/images/bot_001.gif" border="0"></div>
-
-
-</div>
-
-<script type="text/javascript">
- //初始位置
-gID("KeFuDiv").style.top = (document.documentElement.clientHeight - gID("KeFuDiv").offsetHeight)/2 +"px";
-gID("KeFuDiv").style.left = document.documentElement.clientWidth - gID("KeFuDiv").offsetWidth +"px";
-//开始滚动
- ScrollDiv('KeFuDiv');  
-</script>
+<%@ include file="/jlb/include/cs.jsp" %>
 </body>
 </html>

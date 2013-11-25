@@ -42,10 +42,12 @@
 			}
 			
 	/* 获取页底数据 */
-	getArticleList("bottom",1000,{aid:"jlb.contact",start:'0',offset:'6'}, 1);
+	getArticleList("bottom",1000,{aid:"jlb.foot",start:'0',offset:'6'}, 1);
+	getArticleList("link",1000,{aid:"jlb.link",start:'0',offset:'6'}, 1);
 </script>
-<div class="links">
-<a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_20.jpg" border="0" /></a><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_20.jpg" border="0" /></a><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_20.jpg" border="0" /></a><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_20.jpg" border="0" /></a><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_20.jpg" border="0" /></a><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_20.jpg" border="0" /></a><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_20.jpg" border="0" /></a></div>
+<div class="links" id="link">
+	
+</div>
 <div class="footer">
 <ul>
 <li><img src="<%=request.getContextPath()%>/jlb/images/bottom_01.png" /></li>

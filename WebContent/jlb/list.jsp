@@ -8,12 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 <title>金兰宝科技有限公司</title>
- <script src="<%=request.getContextPath()%>/jlb/js/jquery-1.9.1.min.js" type="text/javascript"></script>
- <script src="<%=request.getContextPath()%>/jlb/js/jquery.litenav.js" type="text/javascript"></script>
- <script type="text/javascript" src="<%=request.getContextPath()%>/jlb/js/lrtk.js"></script>
- <link href="<%=request.getContextPath()%>/jlb/css/index.css" rel="stylesheet" type="text/css" />
- <link href="<%=request.getContextPath()%>/jlb/css/style.css" rel="stylesheet" type="text/css" />
- <script type="text/javascript" src="<%=request.getContextPath()%>/jlb/js/pageMenuBar.js"></script>
+<%@ include file="../include/include.jsp" %>
  <script type="text/javascript">
 var cid = '<%=request.getParameter("cid")%>';
 var did = '<%=request.getParameter("did")%>';
@@ -81,18 +76,7 @@ function getArticleListByPage(aid,pageNo,start){
 <div class="body">
 <%@ include file="/jlb/include/top.jsp" %>
 <div class="con20">
-<div class="con21">
-<ul>
-<li><h2><a href="fwxm.html" id="link_text">服务项目</a></h2>
-<h3>Services</h3></li>
-<li><h2><a href="jszc.html">技术支持</a></h2>
-<h3>Technical Support</h3></li>
-<li><h2><a href="rjxz.html">软件下载</a></h2>
-<h3>Software Downloads</h3></li>
-<li><h2><a href="lxfs.html">联系方式</a></h2>
-<h3>Contact</h3></li>
-</ul>
-</div>
+<%@ include file="/jlb/include/left.jsp" %>
  		<div class="con22">
  			<div class="con22_top"></div>
            	  <div class="con22_main">
@@ -108,28 +92,6 @@ function getArticleListByPage(aid,pageNo,start){
 <div id="footer">
 <%@ include file="/jlb/include/foot.jsp" %>
 </div>
-
-<div id="KeFuDiv" class="KeFuDiv">
-  <div><img src="<%=request.getContextPath()%>/jlb/images/up_001.gif" width="105" border="0" usemap="#Map" style="cursor:move;" title="拖动" onmousedown="MoveDiv(KeFuDiv,event);"></div>
-
-
-    <div class="KeFuTitle"><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/list_001.gif" /></a></div>
-
-    <div class="KeFuTitle"><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/list_001.gif" /></a></div>  
-
-    
-     <div class="KeFuTitle"><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/list_002.gif" /></a></div>
-<div class="div_img"><img src="<%=request.getContextPath()%>/jlb/images/bot_001.gif" border="0"></div>
-
-
-</div>
-
-<script>
-//初始位置
-gID("KeFuDiv").style.top = (document.documentElement.clientHeight - gID("KeFuDiv").offsetHeight)/2 +"px";
-gID("KeFuDiv").style.left = document.documentElement.clientWidth - gID("KeFuDiv").offsetWidth +"px";
-//开始滚动
-ScrollDiv('KeFuDiv');
-</script>
+<%@ include file="/jlb/include/cs.jsp" %>
 </body>
 </html>
