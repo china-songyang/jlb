@@ -29,7 +29,7 @@ function getArticleList(divid,size,opt,type){
 						}else if(type == 2){
 							str=$("#"+divid).html()+"<li><a href=\""+url+"\">"+title+"</a></li>"; 
 						} else{
-							str=$("#"+divid).html()+"<li><a href=\""+url+"\"><img src=\""+image+"\" width=\"148\" height=\"108\"/></a></li>"; 
+							str=$("#"+divid).html()+"<td><a href=\""+url+"\"><img src=\""+image+"\" width=\"148\" height=\"108\"/><br>"+title+"</a></td>"; 
 						}
 						$("#"+divid).html(str);
 					}
@@ -41,10 +41,13 @@ function getArticleList(divid,size,opt,type){
 
 <div class="top">
 <div class="logo"></div>
+<form action="<%=request.getContextPath()%>/jlb/list.jsp" method="post">
 <div class="search">搜索
-  <input type="text" class="input"name="textfield" />
-  <input name="" type="button" class="button" id="GO" value="GO" />
+  <input type="text" class="input" name="cid" />
+  <input type="hidden" value="search" name="type" />
+  <input name="" type="submit" class="button" id="GO" value="GO"  />
 </div>
+ </form>
 </div>
 <div class="nav2">
 <ul>
@@ -52,7 +55,7 @@ function getArticleList(divid,size,opt,type){
 <li><a href="<%=request.getContextPath()%>/jlb/detail.jsp?cid=jlb.profile&did=588" id="b">公司概况</a></li>
 <li><a href="<%=request.getContextPath()%>/jlb/list.jsp?cid=jlb.information" id="c">最新资讯</a></li>
 <li><a href="<%=request.getContextPath()%>/jlb/list.jsp?cid=jlb.service" id="d">服务项目</a></li>
-<li><a href="" id="e">成功案例</a></li>
+<li><a href="<%=request.getContextPath()%>/jlb/list.jsp?cid=jlb.case&type=cgal" id="e">成功案例</a></li>
 <li><a href="<%=request.getContextPath()%>/jlb/list.jsp?cid=jlb.support" id="f">技术支持</a></li>
 <li><a href="<%=request.getContextPath()%>/jlb/list.jsp?cid=jlb.download" id="g">软件下载</a></li>
 <li><a href="#" id="h">在线留言</a></li>

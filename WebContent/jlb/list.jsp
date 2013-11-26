@@ -10,6 +10,7 @@
 <title>金兰宝科技有限公司</title>
 <%@ include file="../include/include.jsp" %>
  <script type="text/javascript">
+var type='<%=request.getParameter("type")%>'
 var cid = '<%=request.getParameter("cid")%>';
 var did = '<%=request.getParameter("did")%>';
 var opt={aid:cid,start:'0',offset:'25'};
@@ -32,43 +33,124 @@ $(function() {
 function getArticleListByPage(aid,pageNo,start){
 	opt.start=start;
 	//获得文章列表
-	$.post("<%=request.getContextPath()%>/webdo/article/articleListByPage.do", 
-			opt,
-			function(json){
-				var str = "";
-				$("#artlist").html(str);
-				var num = json.rows.length;
-				var aid = "";
-				if(num>0){
-					for(var i=0;i<num;i++) {
-						var id = json.rows[i].id;
-						var image = json.rows[i].image;
-						var title = json.rows[i].title;
-						var datetime = json.rows[i].createTime.substr(0,10);
-						var url="<%=request.getContextPath()%>/jlb/detail.jsp?cid="+cid+"&did="+id;
-						//aid 赋值
-						if (did == null||did==""||did=="null") {
-							//aid = "ccgdzs.new01.n1";
-							did = id;
+	if(type!=null&&type!=""&&type=="search"){
+		opt.aid=aid;
+		$.post("<%=request.getContextPath()%>/webdo/recommend/searchArticle.do", 
+				opt,
+				function(json){
+					var str = "";
+					$("#artlist").html(str);
+					var num = json.rows.length;
+					var aid = "";
+					if(num>0){
+						for(var i=0;i<num;i++) {
+							var id = json.rows[i].id;
+							var image = json.rows[i].image;
+							var title = json.rows[i].title;
+							var datetime = json.rows[i].createTime.substr(0,10);
+							var url="<%=request.getContextPath()%>/jlb/detail.jsp?cid="+cid+"&did="+id;
+							//aid 赋值
+							if (did == null||did==""||did=="null") {
+								//aid = "ccgdzs.new01.n1";
+								did = id;
+							}
+							str=$("#artlist").html()+"<li><a href=\""+url+"\">"+title+"</a><span style=\"float:right;margin-right:20px;\">"+datetime+"</span></li>";
+	                    
+							$("#artlist").html(str);
 						}
-						str=$("#artlist").html()+"<li><a href=\""+url+"\">"+title+"</a><span style=\"float:right;margin-right:20px;\">"+datetime+"</span></li>";
-                    
+					}else{
+						$("#artlist").html("没有文章");
+					}
+					var totle = json.total;
+					//分页
+					$("#pagemenu").pageMenuBar({
+						rowPerPage:parseInt(opt.offset),
+						sumRow:parseInt(totle), 
+						pageNo:parseInt(pageNo),
+						state:1,
+						func:'getArticleListByPage',
+						args:'"'+cid+'"'
+					});
+				}, 
+				"json");
+	}else if(type!=null&&type!=""&&type=="cgal"){
+		$.post("<%=request.getContextPath()%>/webdo/article/articleListByPage.do", 
+				opt,
+				function(json){
+					var str = "";
+					$("#artlist").html(str);
+					var num = json.rows.length;
+					var aid = "";
+					if(num>0){
+						str+=$("#artlist").html()+"<table>";
+						for(var i=0;i<num;i++) {
+							var id = json.rows[i].id;
+							var image = json.rows[i].image;
+							var title = json.rows[i].title;
+							var datetime = json.rows[i].createTime.substr(0,10);
+							var url="<%=request.getContextPath()%>/jlb/detail.jsp?cid="+cid+"&did="+id;
+							//aid 赋值
+							if (did == null||did==""||did=="null") {
+								//aid = "ccgdzs.new01.n1";
+								did = id;
+							}
+							str+=$("#artlist").html()+"<td><a href=\""+url+"\"><img src="+image+" width='200' height='200'><br>"+title+"</a></td>";
+						}
+						str+=$("#artlist").html()+"</table>";
 						$("#artlist").html(str);
 					}
-				}
-				var totle = json.total;
-				//分页
-				$("#pagemenu").pageMenuBar({
-					rowPerPage:parseInt(opt.offset),
-					sumRow:parseInt(totle), 
-					pageNo:parseInt(pageNo),
-					state:1,
-					func:'getArticleListByPage',
-					args:'"'+cid+'"'
-				});
-			}, 
-			"json");
+					var totle = json.total;
+					//分页
+					$("#pagemenu").pageMenuBar({
+						rowPerPage:parseInt(opt.offset),
+						sumRow:parseInt(totle), 
+						pageNo:parseInt(pageNo),
+						state:1,
+						func:'getArticleListByPage',
+						args:'"'+cid+'"'
+					});
+				}, 
+				"json");
+	}else{
+		$.post("<%=request.getContextPath()%>/webdo/article/articleListByPage.do", 
+				opt,
+				function(json){
+					var str = "";
+					$("#artlist").html(str);
+					var num = json.rows.length;
+					var aid = "";
+					if(num>0){
+						for(var i=0;i<num;i++) {
+							var id = json.rows[i].id;
+							var image = json.rows[i].image;
+							var title = json.rows[i].title;
+							var datetime = json.rows[i].createTime.substr(0,10);
+							var url="<%=request.getContextPath()%>/jlb/detail.jsp?cid="+cid+"&did="+id;
+							//aid 赋值
+							if (did == null||did==""||did=="null") {
+								//aid = "ccgdzs.new01.n1";
+								did = id;
+							}
+							str=$("#artlist").html()+"<li><a href=\""+url+"\">"+title+"</a><span style=\"float:right;margin-right:20px;\">"+datetime+"</span></li>";
+	                    
+							$("#artlist").html(str);
+						}
+					}
+					var totle = json.total;
+					//分页
+					$("#pagemenu").pageMenuBar({
+						rowPerPage:parseInt(opt.offset),
+						sumRow:parseInt(totle), 
+						pageNo:parseInt(pageNo),
+						state:1,
+						func:'getArticleListByPage',
+						args:'"'+cid+'"'
+					});
+				}, 
+				"json");
+	}
 }
+
 </script>
 </head>
 

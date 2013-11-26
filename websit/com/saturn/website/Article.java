@@ -161,6 +161,14 @@ public class Article {
 		
 	}
 	
+	public static ListData<Article> getByTitle(String cid, String start, String offset) {
+		
+		return SimpleDaoTemplate.query("SELECT * FROM web_article WHERE state = 'visible.true' AND title like '%" + cid + "%' order by type desc, sort desc, createTime desc",
+				new DymaticCondition(),
+				mapping, Article.class, start, offset);
+		
+	}
+	
 	public static ListData<Article> getSearchList(String text, String start, String offset) {
 		
 		return SimpleDaoTemplate.query("SELECT * FROM web_article WHERE state = 'visible.true' AND title like '%" + text + "%' order by type desc, sort desc, createTime desc",
