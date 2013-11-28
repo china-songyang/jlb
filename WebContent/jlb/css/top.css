@@ -3,8 +3,8 @@
 p#back-to-top{ 
 position:fixed; 
 display:none;
-bottom:100px; 
-right:80px;
+bottom:110px; 
+right:110px;
 z-index:9999;
 } 
 p#back-to-top a{ 

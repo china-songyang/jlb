@@ -11,4 +11,7 @@
  <link href="<%=request.getContextPath()%>/jlb/css/index.css" rel="stylesheet" type="text/css" />
  
  <link href="<%=request.getContextPath()%>/jlb/css/style.css" rel="stylesheet" type="text/css" />
+ <link href="<%=request.getContextPath()%>/jlb/css/top.css" rel="stylesheet" type="text/css" />
  <script type="text/javascript" src="<%=request.getContextPath()%>/jlb/js/pageMenuBar.js"></script>
+ <script type="text/javascript" src="<%=request.getContextPath()%>/jlb/js/imgscroll.js"></script>
+ <script type="text/javascript" src="<%=request.getContextPath()%>/jlb/js/back-to-top.js"></script>

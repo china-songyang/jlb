@@ -123,7 +123,7 @@ img{border: none}
 
 
 /*img_js*/
-#demo {overflow:hidden;border: 0px dashed #CCC;width: 960px; }
+#demo {overflow:hidden;border: 0px dashed #CCC;width: 960px; margin-top:-15px;}
 #demo img { width:148px; height:108px;border: 1px solid #CCCCCC; padding:2px; background-color:#FFFFFF;}
 #indemo {float: left;width: 500%;}
 #indemo ul{ list-style-type:none; margin:0 0 0 0}

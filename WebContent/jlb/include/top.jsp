@@ -29,7 +29,7 @@ function getArticleList(divid,size,opt,type){
 						}else if(type == 2){
 							str=$("#"+divid).html()+"<li><a href=\""+url+"\">"+title+"</a></li>"; 
 						} else{
-							str=$("#"+divid).html()+"<td><a href=\""+url+"\"><img src=\""+image+"\" width=\"148\" height=\"108\"/><br>"+title+"</a></td>"; 
+							str=$("#"+divid).html()+"<li><a href=\""+url+"\"><img src=\""+image+"\" width=\"148\" height=\"108\"/><br>"+title+"</a></li>"; 
 						}
 						$("#"+divid).html(str);
 					}
