@@ -11,7 +11,7 @@
 <link href="css/global.css" rel="stylesheet" type="text/css" />
 <LINK href="<%=request.getContextPath()%>/door/css/qq.css" type=text/css rel=stylesheet>
 <script type="text/javascript" src="<%=request.getContextPath()%>/door/js/slides.min.jquery.js"></script>
-<title>东北木门网</title>
+<title>金兰宝科技有限公司</title>
 <style type="text/css">
 	a,img{border:0;}
 	#clsrw img{width:122px;height:163px;}

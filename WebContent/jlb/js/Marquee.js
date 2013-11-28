@@ -77,12 +77,12 @@
 			navHtml += '</ul>';
 			
 			//滚动元素总尺寸小于容器尺寸，不滚动
-			if (scrollSize<(_type?scrollW:scrollH)) return; 
+			/*if (scrollSize<(_type?scrollW:scrollH)) return;*/
 			//克隆滚动子元素将其插入到滚动元素后，并设定滚动元素宽度
 			$element.append($kids.clone()).css(_type?'width':'height',scrollSize*2);
 			
 			//轮换导航
-			if (opts.navId) {
+			/*if (opts.navId) {
 				$nav = $(opts.navId).append(navHtml).hover( stop, start );
 				$navBtns = $('li', $nav);
 				$navBtns.each(function(i){
@@ -96,7 +96,7 @@
 					});
 				});
 				$navBtns.eq(numView).addClass('navOn');
-			}
+			}*/
 			
 			//设定初始位置
 			if (opts.direction == 'right' || opts.direction == 'down') {
@@ -143,7 +143,7 @@
 				}
 			
 				//控制前后走
-				if(opts.btnGo){
+				/*if(opts.btnGo){
 					$.each(opts.btnGo, function(i,val){
 						$(val).bind(opts.eventGo,function(){
 							if(isMove == true) return;
@@ -155,7 +155,7 @@
 							}
 						});
 					});
-				}
+				}*/
 			}
 			
 			function scrollFunc(){
@@ -256,7 +256,7 @@
 				scrollId = setTimeout(scrollFunc, opts.scrollDelay);
 			}
 			
-			function start(){
+			/*function start(){
 				rollId = setInterval(function(){
 					rollFunc();
 				}, opts.time*1000);
@@ -271,7 +271,7 @@
 			
 			function easeOutQuint(t,b,c,d){
 				return c*((t=t/d-1)*t*t*t*t + 1) + b;
-			}
+			}*/
 
 		});
 	};

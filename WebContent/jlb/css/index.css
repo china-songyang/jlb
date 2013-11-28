@@ -124,7 +124,7 @@ img{border: none}
 
 /*img_js*/
 #demo {overflow:hidden;border: 0px dashed #CCC;width: 960px; margin-top:-15px;}
-#demo img { width:148px; height:108px;border: 1px solid #CCCCCC; padding:2px; background-color:#FFFFFF;}
+#demo img { width:143px; height:108px;border: 1px solid #CCCCCC; padding:2px; background-color:#FFFFFF;}
 #indemo {float: left;width: 500%;}
 #indemo ul{ list-style-type:none; margin:0 0 0 0}
 #indemo ul li{ width:150px; float:left; margin:0 15px 0 0}

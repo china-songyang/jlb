@@ -149,9 +149,45 @@ function getArticleListByPage(aid,pageNo,start){
 				}, 
 				"json");
 	}
-}
+};
+function getArticle_cgal(divid,size,opt){
+	$("#"+divid+"More").attr("href","<%=request.getContextPath()%>/jlb/list.jsp?cid="+opt.aid);
+	$.post("<%=request.getContextPath()%>/webdo/article/articleListByPage.do", 
+			opt, 
+			function(json){
+				var str = "";
+				$("#"+divid).html(str);
+				var num = json.rows.length;
+				if(num>0){
+					for(var i=0;i<num;i++) {
+						var id = json.rows[i].id;
+						var image = json.rows[i].image!=""?json.rows[i].image:"images/jctp_01.jpg";
+						var title = size!=null&&size!=""&&json.rows[i].title.length>size?json.rows[i].title.substr(0,size)+"...":json.rows[i].title;
+						var datetime = json.rows[i].createTime.substr(0,10);
+						var url="<%=request.getContextPath()%>/jlb/detail.jsp?cid="+opt.aid+"&did="+id;
+						str=$("#"+divid).html()+"<li><a href=\""+url+"\"><img width=\"140\" height=\"118\" alt=\""+json.rows[i].title+"\" src=\""+image+"\"/></a><br><span>"+title+"</span></li>";
+						$("#"+divid).html(str);
+					}
+				}
+				
+				$(".scrollleft").imgscroll({
+					speed: 20,    //图片滚动速度
+					amount: 0,    //图片滚动过渡时间
+					width: 1,     //图片滚动步数
+					dir: "left"   // "left" 或 "up" 向左或向上滚动
+				});
+			}, 
+			"json");
+};
 
+getArticle_cgal("case",21,{aid:"jlb.case",start:'0',offset:'16'}, 3);
 </script>
+<style type="text/css">
+/* scrollleft */
+.scrollleft{width:960px;padding:5px 20px 0px 20px;margin:0px auto;}
+.scrollleft li{float:left;margin-right:7px;display:inline;width:158px;text-align:center;line-height:19px}
+.scrollleft img{width:136px;height:100px;padding:10px;border:solid 1px #ddd;}
+</style>
 </head>
 
 <body>
@@ -168,7 +204,7 @@ function getArticleListByPage(aid,pageNo,start){
             <div class="con22_bottom"></div>
         </div><!--右侧-->
 </div>
-<%-- <%@ include file="/jlb/include/roll.jsp" %> --%>
+<%@ include file="/jlb/include/roll.jsp" %>
 
 </div>
 <div id="footer">

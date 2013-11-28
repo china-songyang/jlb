@@ -42,8 +42,8 @@
 			}
 			
 	/* 获取页底数据 */
-	getArticleList("bottom",1000,{aid:"jlb.foot",start:'0',offset:'6'}, 1);
-	getArticleList("link",1000,{aid:"jlb.link",start:'0',offset:'6'}, 1);
+	getArticleList("bottom",1000,{aid:"jlb.foot",start:'0',offset:'6'}, 3);
+	getArticleList("link",1000,{aid:"jlb.link",start:'0',offset:'6'}, 3);
 </script>
 <div class="links" id="link">
 	

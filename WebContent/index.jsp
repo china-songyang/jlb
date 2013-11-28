@@ -18,12 +18,21 @@ a,img{border:0;}
 .scrollleft{width:960px;padding:5px 20px 0px 20px;margin:0px auto;}
 .scrollleft li{float:left;margin-right:7px;display:inline;width:158px;text-align:center;line-height:19px}
 .scrollleft img{width:136px;height:100px;padding:10px;border:solid 1px #ddd;}
+
+a{color:#333;}
+a:hover{color:#3366cc;text-decoration:none;}
+/* marquee6 */
+#marquee6{width:360px;height:135px; overflow:hidden;}
+#marquee6 ul li{padding:0 10px;line-height:20px;height:20px;overflow:hidden;}
+/* control */
+.timescroll{float:right;}
+
 </style>
  <script type="text/javascript">
  $(function() {
 		//获得文章列表
 		getArticleList("profile",450,{aid:"jlb.profile",start:'0',offset:'1'}, 1);
-		getArticleList("news",16,{aid:"jlb.information ",start:'0',offset:'6'}, 2);
+		getArticle_zxzx("news",16,{aid:"jlb.information ",start:'0',offset:'6'}, 2);
 		getArticleList("service",18,{aid:"jlb.service",start:'0',offset:'6'}, 2);
 		getArticleList("support",18,{aid:"jlb.support",start:'0',offset:'6'}, 2);
 		getArticleList("download",21,{aid:"jlb.download",start:'0',offset:'6'}, 2);
@@ -59,11 +68,43 @@ a,img{border:0;}
 					});
 				}, 
 				"json");
-	}
+	};
+ /* 最新资讯插件*/
+ function getArticle_zxzx(divid,size,opt){
+		$("#"+divid+"More").attr("href","<%=request.getContextPath()%>/jlb/list.jsp?cid="+opt.aid);
+		$.post("<%=request.getContextPath()%>/webdo/article/articleListByPage.do", 
+				opt, 
+				function(json){
+					var str = "";
+					$("#"+divid).html(str);
+					var num = json.rows.length;
+					if(num>0){
+						for(var i=0;i<num;i++) {
+							var id = json.rows[i].id;
+							var image = json.rows[i].image!=""?json.rows[i].image:"images/jctp_01.jpg";
+							var title = size!=null&&size!=""&&json.rows[i].title.length>size?json.rows[i].title.substr(0,size)+"...":json.rows[i].title;
+							var datetime = json.rows[i].createTime.substr(0,10);
+							var url="<%=request.getContextPath()%>/jlb/detail.jsp?cid="+opt.aid+"&did="+id;
+							str=$("#"+divid).html()+"<li><a href=\""+url+"\">"+title+"<span class=\"timescroll\">"+datetime+"</span></a></li>";
+							$("#"+divid).html(str);
+						}
+					}
+					
+					$('#marquee6').kxbdSuperMarquee({
+						isMarquee:true,
+						isEqual:false,
+						scrollDelay:30,
+						controlBtn:{up:'#goUM',down:'#goDM'},
+						direction:'up'
+					});
+				}, 
+				"json");
+	};
+	
  </script>
  
  <!-- 最新资讯滚动 -->
- <script type="text/javascript">
+<!--  <script type="text/javascript">
  function AutoScroll(obj){
 		$(obj).find("ul:first").animate({
 			marginTop:"-19px"
@@ -74,7 +115,7 @@ a,img{border:0;}
 	$(document).ready(function(){
 		setInterval('AutoScroll("#scrollDiv")',2000);
 	});
-</script>
+</script> -->
 
 
 </head>
@@ -133,7 +174,18 @@ a,img{border:0;}
 	<!-- 最新资讯 -->
 	<div class="con8" id="scrollDiv">
 	<p class="xmore"><a href="#" id="newsMore"><img src="<%=request.getContextPath()%>/jlb/images/more_01.png" border="0" /></a></p>
-	<ul id="news"></ul>
+	<!-- <ul id="news"></ul> -->
+	<div id="marquee6">
+		<ul id="news">
+			<!-- <li><a href="http://www.17sucai.com/" title="jquery HTML5 幻灯片插件 用 Canvas 制作类似百叶窗拍摄快门摄影拍摄效果">jquery HTML5 幻灯片插件 用 Canvas 制作类似百叶窗拍摄快门摄影拍摄效果</a></li>
+			<li><a href="http://www.17sucai.com/" title="制作CSS3和HTML5的一个单页网站模板">制作CSS3和HTML5的一个单页网站模板</a></li>
+		
+			<li><a href="http://www.17sucai.com/" title="jquery 幻灯片切换应用一个HTML5的幻灯片">jquery 幻灯片切换应用一个HTML5的幻灯片</a></li>
+			<li><a href="http://www.17sucai.com/" title="jquery 图片滚动特效应用旋转幻灯片使用jQuery和CSS3">jquery 图片滚动特效应用旋转幻灯片使用jQuery和CSS3</a></li>
+			<li><a href="http://www.17sucai.com/" title="用div+css制作纯CSS下拉菜单，兼容IE6 IE7 IE8及以上 Firefox">用div+css制作纯CSS下拉菜单，兼容IE6 IE7 IE8及以上 Firefox</a></li>
+			<li><a href="http://www.17sucai.com/" title="CSS如何定位工程">CSS如何定位工程</a></li> -->
+		</ul>
+	</div>
 	</div>
 	<!-- 服务项目 -->
 	<div class="con9">

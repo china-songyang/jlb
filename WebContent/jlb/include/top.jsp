@@ -25,11 +25,11 @@ function getArticleList(divid,size,opt,type){
 						var datetime = json.rows[i].createTime.substr(0,10);
 						var url="<%=request.getContextPath()%>/jlb/detail.jsp?cid="+opt.aid+"&did="+id;
 						if(type == 1){
-							str=$("#"+divid).html()+"<a href=\""+url+"\">"+text+"</li>";
+							str=$("#"+divid).html()+"<li><a href=\""+url+"\">"+text+"</li>";
 						}else if(type == 2){
 							str=$("#"+divid).html()+"<li><a href=\""+url+"\">"+title+"</a></li>"; 
 						} else{
-							str=$("#"+divid).html()+"<li><a href=\""+url+"\"><img src=\""+image+"\" width=\"148\" height=\"108\"/><br>"+title+"</a></li>"; 
+							str=$("#"+divid).html()+"<a href=\""+url+"\">"+text+""; 
 						}
 						$("#"+divid).html(str);
 					}
