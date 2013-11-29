@@ -42,6 +42,7 @@ $(function() {
 <div class="body">
 <!-- 头文件 -->
 <%@ include file="/jlb/include/top.jsp" %>
+<p id="back-to-top"><a href="#top"><span style="background: url('/images/top.png');"></span></a></p>
 <div class="con20">
 <!-- 左侧文件 -->
 <%@ include file="/jlb/include/left.jsp" %>

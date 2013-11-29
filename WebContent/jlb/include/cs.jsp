@@ -11,7 +11,7 @@
 <script>
 //初始位置
 gID("KeFuDiv").style.top = (document.documentElement.clientHeight - gID("KeFuDiv").offsetHeight)/2 +"px";
-gID("KeFuDiv").style.left = document.documentElement.clientWidth - gID("KeFuDiv").offsetWidth +"px";
+gID("KeFuDiv").style.right = document.documentElement.clientWidth - gID("KeFuDiv").offsetWidth +"px";
 //开始滚动
 ScrollDiv('KeFuDiv');
 </script>

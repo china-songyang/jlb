@@ -102,22 +102,6 @@ a:hover{color:#3366cc;text-decoration:none;}
 	};
 	
  </script>
- 
- <!-- 最新资讯滚动 -->
-<!--  <script type="text/javascript">
- function AutoScroll(obj){
-		$(obj).find("ul:first").animate({
-			marginTop:"-19px"
-		},500,function(){
-			$(this).css({marginTop:"0px"}).find("li:first").appendTo(this);
-		});
-	}
-	$(document).ready(function(){
-		setInterval('AutoScroll("#scrollDiv")',2000);
-	});
-</script> -->
-
-
 </head>
 
 <body>

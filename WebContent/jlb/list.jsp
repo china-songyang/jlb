@@ -19,7 +19,7 @@ $(function() {
 	getMenuTitle(cid);
 	});
 	
-<%-- function getMenuTitle(cid){
+function getMenuTitle(cid){
 	//获得菜单标题
 	$.post("<%=request.getContextPath()%>/webdo/menu/menubycid.do", 
 			{cid:cid}, 
@@ -29,7 +29,7 @@ $(function() {
 			}, 
 			"json");
 }
- --%>
+
 function getArticleListByPage(aid,pageNo,start){
 	opt.start=start;
 	//获得文章列表
@@ -131,7 +131,7 @@ function getArticleListByPage(aid,pageNo,start){
 								//aid = "ccgdzs.new01.n1";
 								did = id;
 							}
-							str=$("#artlist").html()+"<li><a href=\""+url+"\">"+title+"</a><span style=\"float:right;margin-right:20px;\">"+datetime+"</span></li>";
+							str=$("#artlist").html()+"<li style=\"width:760px;\"><a href=\""+url+"\">"+title+"<span style=\"float:right;margin-right:20px;\">"+datetime+"</span></a></li>";
 	                    
 							$("#artlist").html(str);
 						}
@@ -193,6 +193,7 @@ getArticle_cgal("case",21,{aid:"jlb.case",start:'0',offset:'16'}, 3);
 <body>
 <div class="body">
 <%@ include file="/jlb/include/top.jsp" %>
+<p id="back-to-top"><a href="#top"><span style="background: url('/images/top.png');"></span></a></p>
 <div class="con20">
 <%@ include file="/jlb/include/left.jsp" %>
  		<div class="con22">
