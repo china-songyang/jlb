@@ -52,14 +52,11 @@ public class Message {
 		//根据修改列的顺序获取值对象的属性值。例子：vo.getName(), vo.getValue(), vo.getId()
 		return SimpleDaoTemplate.update(
 				"UPDATE web_message SET sendTime = ?, sendText = ?, sendEmail = ?, sendPhone = ?, sendName = ? WHERE id = ?", 
-				
 				vo.getSendTime(),
 				vo.getSendText(),
 				vo.getSendEmail(),
 				vo.getSendPhone(),
 				vo.getSendName(),
-				
-				
 				vo.getId()
 		);
 	}
@@ -104,11 +101,9 @@ public class Message {
 		
 	}
 
-	public Message(String id, String cid, String state, String stateName,
-			String hasShow, String hasShowName, String sendTime,
+	public Message(String id,  String sendTime,
 			String sendText, String sendEmail, String sendPhone,
-			String sendName, String receiveTime, String receiveText,
-			String receiveOperater, String receiveOperaterName, String type) {
+			String sendName) {
 		
 		super();
 		this.id = id;

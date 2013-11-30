@@ -15,7 +15,7 @@
 *{margin:0;padding:0;list-style-type:none;}
 a,img{border:0;}
 /* scrollleft */
-.scrollleft{width:960px;padding:5px 20px 0px 20px;margin:0px auto;}
+.scrollleft{width:920px;padding:5px 20px 0px 20px;margin:0px auto;}
 .scrollleft li{float:left;margin-right:7px;display:inline;width:158px;text-align:center;line-height:19px}
 .scrollleft img{width:136px;height:100px;padding:10px;border:solid 1px #ddd;}
 
@@ -161,13 +161,6 @@ a:hover{color:#3366cc;text-decoration:none;}
 	<!-- <ul id="news"></ul> -->
 	<div id="marquee6">
 		<ul id="news">
-			<!-- <li><a href="http://www.17sucai.com/" title="jquery HTML5 幻灯片插件 用 Canvas 制作类似百叶窗拍摄快门摄影拍摄效果">jquery HTML5 幻灯片插件 用 Canvas 制作类似百叶窗拍摄快门摄影拍摄效果</a></li>
-			<li><a href="http://www.17sucai.com/" title="制作CSS3和HTML5的一个单页网站模板">制作CSS3和HTML5的一个单页网站模板</a></li>
-		
-			<li><a href="http://www.17sucai.com/" title="jquery 幻灯片切换应用一个HTML5的幻灯片">jquery 幻灯片切换应用一个HTML5的幻灯片</a></li>
-			<li><a href="http://www.17sucai.com/" title="jquery 图片滚动特效应用旋转幻灯片使用jQuery和CSS3">jquery 图片滚动特效应用旋转幻灯片使用jQuery和CSS3</a></li>
-			<li><a href="http://www.17sucai.com/" title="用div+css制作纯CSS下拉菜单，兼容IE6 IE7 IE8及以上 Firefox">用div+css制作纯CSS下拉菜单，兼容IE6 IE7 IE8及以上 Firefox</a></li>
-			<li><a href="http://www.17sucai.com/" title="CSS如何定位工程">CSS如何定位工程</a></li> -->
 		</ul>
 	</div>
 	</div>

@@ -131,8 +131,8 @@ function getArticleListByPage(aid,pageNo,start){
 								//aid = "ccgdzs.new01.n1";
 								did = id;
 							}
-							str=$("#artlist").html()+"<li style=\"width:760px;\"><a href=\""+url+"\">"+title+"<span style=\"float:right;margin-right:20px;\">"+datetime+"</span></a></li>";
-	                    
+							str=$("#artlist").html()+"<li><a href=\""+url+"\">"+title+"</a>";
+	                    	str+="<span\">"+datetime+"</span></li>";
 							$("#artlist").html(str);
 						}
 					}
@@ -150,6 +150,7 @@ function getArticleListByPage(aid,pageNo,start){
 				"json");
 	}
 };
+/* 成功案例 */
 function getArticle_cgal(divid,size,opt){
 	$("#"+divid+"More").attr("href","<%=request.getContextPath()%>/jlb/list.jsp?cid="+opt.aid);
 	$.post("<%=request.getContextPath()%>/webdo/article/articleListByPage.do", 
@@ -184,7 +185,7 @@ getArticle_cgal("case",21,{aid:"jlb.case",start:'0',offset:'16'}, 3);
 </script>
 <style type="text/css">
 /* scrollleft */
-.scrollleft{width:960px;padding:5px 20px 0px 20px;margin:0px auto;}
+.scrollleft{width:920px;padding:5px 20px 0px 20px;margin:0px auto;}
 .scrollleft li{float:left;margin-right:7px;display:inline;width:158px;text-align:center;line-height:19px}
 .scrollleft img{width:136px;height:100px;padding:10px;border:solid 1px #ddd;}
 </style>
@@ -193,7 +194,7 @@ getArticle_cgal("case",21,{aid:"jlb.case",start:'0',offset:'16'}, 3);
 <body>
 <div class="body">
 <%@ include file="/jlb/include/top.jsp" %>
-<p id="back-to-top"><a href="#top"><span style="background: url('/images/top.png');"></span></a></p>
+<p id="back-to-top"><a href="#top"><span style="background: url('./images/top.png');"></span></a></p>
 <div class="con20">
 <%@ include file="/jlb/include/left.jsp" %>
  		<div class="con22">
