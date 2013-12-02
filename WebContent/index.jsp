@@ -85,7 +85,7 @@ a:hover{color:#3366cc;text-decoration:none;}
 							var title = size!=null&&size!=""&&json.rows[i].title.length>size?json.rows[i].title.substr(0,size)+"...":json.rows[i].title;
 							var datetime = json.rows[i].createTime.substr(0,10);
 							var url="<%=request.getContextPath()%>/jlb/detail.jsp?cid="+opt.aid+"&did="+id;
-							str=$("#"+divid).html()+"<li><a href=\""+url+"\">"+title+"<span class=\"timescroll\">"+datetime+"</span></a></li>";
+							str=$("#"+divid).html()+"<li><span class=\"timescroll\">"+datetime+"</span><a href=\""+url+"\">"+title+"</a></li>";
 							$("#"+divid).html(str);
 						}
 					}
@@ -137,9 +137,9 @@ a:hover{color:#3366cc;text-decoration:none;}
 <div class="con3">
 <h2>电脑医生到您家</h2>
 <ul>
-<li><h3><a href="#">各大品牌笔记本</a><p>维修成功率高</p><p>清理技术好</p></h3><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_03.jpg" /></a></li>
-<li><h3><a href="#">台式电脑维修</a><p>上门安装系统</p><p>疑难杂症维修</p></h3><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_04.jpg" /></a></li>
-<li><h3><a href="#">显示器维修</a><p>液晶显示屏</p><p>LED屏幕维修</p></h3><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_05.jpg" /></a></li>
+<li><h3><a href="#"></a>各大品牌笔记本<p>维修成功率高</p><p>清理技术好</p></h3><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_03.jpg" /></a></li>
+<li><h3><a href="#"></a>台式电脑维修<p>上门安装系统</p><p>疑难杂症维修</p></h3><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_04.jpg" /></a></li>
+<li><h3><a href="#"></a>显示器维修<p>液晶显示屏</p><p>LED屏幕维修</p></h3><a href="#"><img src="<%=request.getContextPath()%>/jlb/images/pic_05.jpg" /></a></li>
 </ul>
 </div>
 </div>

@@ -187,7 +187,9 @@ getArticle_cgal("case",21,{aid:"jlb.case",start:'0',offset:'16'}, 3);
  		<div class="con22">
  			<div class="con22_top"></div>
            	  <div class="con22_main">
-           	 	留言成功，多谢您的宝贵意见。
+           	 	 <center>
+           	 		<div style=""><br><br><br><br><br><br><img src="<%=request.getContextPath()%>/jlb/images/sucess.png"></div><div style="margin-top:6px;height:30px;line-height: 30px;font-size:16px;">留言成功，多谢您的宝贵意见!</div>
+           	 	</center>
             </div>
             <div class="con22_bottom"></div>
         </div><!--右侧-->

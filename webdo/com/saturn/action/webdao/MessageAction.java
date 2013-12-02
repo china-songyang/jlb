@@ -26,6 +26,6 @@ public class MessageAction implements IAction{
 	
 	@Override
 	public String requestMapping() {
-		return "/jlb/webdo/message.do";
+		return "/webdo/message/addMessage.do";
 	}
 }

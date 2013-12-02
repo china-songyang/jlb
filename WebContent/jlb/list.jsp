@@ -131,8 +131,7 @@ function getArticleListByPage(aid,pageNo,start){
 								//aid = "ccgdzs.new01.n1";
 								did = id;
 							}
-							str=$("#artlist").html()+"<li><a href=\""+url+"\">"+title+"</a>";
-	                    	str+="<span\">"+datetime+"</span></li>";
+							str=$("#artlist").html()+"<li><span>"+datetime+"</span><a href=\""+url+"\">"+title+"</a></li>";
 							$("#artlist").html(str);
 						}
 					}

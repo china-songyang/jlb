@@ -10,6 +10,10 @@
 <title>金兰宝科技有限公司</title>
 <%@ include file="../include/include.jsp" %>
  <script type="text/javascript">
+ 
+ function add(){
+	 $('#addMessage').submit();
+ }
 var type='<%=request.getParameter("type")%>'
 var cid = '<%=request.getParameter("cid")%>';
 var did = '<%=request.getParameter("did")%>';
@@ -176,6 +180,22 @@ getArticle_cgal("case",21,{aid:"jlb.case",start:'0',offset:'16'}, 3);
 .scrollleft{width:960px;padding:5px 20px 0px 20px;margin:0px auto;}
 .scrollleft li{float:left;margin-right:7px;display:inline;width:158px;text-align:center;line-height:19px}
 .scrollleft img{width:136px;height:100px;padding:10px;border:solid 1px #ddd;}
+
+.in{
+	border:1px solid #B3D0D9;
+	width:200px;
+	height:30px;
+	margin:10px;
+}
+
+.ft{
+	font-size:14px;
+	font-weight: bold;
+	color:#646464;
+}
+.fom{
+	margin-left:100px;
+}
 </style>
 </head>
 
@@ -186,15 +206,15 @@ getArticle_cgal("case",21,{aid:"jlb.case",start:'0',offset:'16'}, 3);
 <%@ include file="/jlb/include/left.jsp" %>
  		<div class="con22">
  			<div class="con22_top"></div>
-           	  <div class="con22_main">
-           	 <form id="" name="" action="<%=request.getContextPath()%>/jlb/webdo/message.do" method="post">
-           	 	留言：<input type="text" id="sendText" name="sendText"  /><br>
-           	 	昵称：<input type="text" id="sendName" name="sendName" /><br>
-           	 	电话：<input type="text" id="sendPhone" name="sendPhone"  /><br>
-           	 	邮箱：<input type="text" id="sendEmail" name="sendEmail"  />
+           	  <div class="con22_main"><br><br>
+           	 <form class="fom" id="addMessage" name="addMessage" action="<%=request.getContextPath()%>/webdo/message/addMessage.do" method="post">
            	 	
+           	 	<label class="ft">昵称：</label><input type="text" id="sendName" name="sendName" class="in"/><br>
+           	 	<label class="ft">电话：</label><input type="text" id="sendPhone" name="sendPhone"  class="in"/><br>
+           	 	<label class="ft">邮箱：</label><input type="text" id="sendEmail" name="sendEmail"  class="in"/><br>
+           	 	<label class="ft">留言：</label><input  id="sendText" name="sendText"  class="in" style="width:300px;height:50px;"/>
            	 	<input id="sendTime" type="hidden" name="sendTime" type="text" value="<%=DateUtils.getSystemTime()%>"></input>
-           	 	<input  value="提交" type="submit" />
+           	 	<br><input   type="button" value="提交" onclick="add()" class="in" style="margin-left: 50px;"></input>
            	 </form>
             </div>
             <div class="con22_bottom"></div>

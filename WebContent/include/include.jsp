@@ -15,4 +15,4 @@
  <script type="text/javascript" src="<%=request.getContextPath()%>/jlb/js/pageMenuBar.js"></script>
  <script type="text/javascript" src="<%=request.getContextPath()%>/jlb/js/imgscroll.js"></script>
  <script type="text/javascript" src="<%=request.getContextPath()%>/jlb/js/back-to-top.js"></script>
- <script type="text/javascript" src="<%=request.getContextPath()%>/jlb/js/Marquee.js"></script>
+ <script type="text/javascript" src="<%=request.getContextPath()%>/jlb/js/Marquee.js"></script> 

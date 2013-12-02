@@ -14,10 +14,11 @@
 .con22_top{width:793px;height:6px;background-image:url(../images/pic_22.jpg);background-repeat: no-repeat;background-position: left top;}
 .con22_main{width:761px;height:389px;border-right-width: 1px;border-left-width: 1px;border-right-style: solid;border-left-style: solid;border-right-color: #b3d0d9;border-left-color: #b3d0d9; padding:0 15px 0 15px;}
 .con22_main ul{ list-style-type:none;}
-.con22_main ul li{line-height:34px;font-size:12px;color:#333333;border-bottom-width: 1px;border-bottom-style: solid;border-bottom-color: #CCCCCC;background-image: url(../images/li_02.png);background-repeat: no-repeat;background-position: left center;text-indent: 18px;}
+.con22_main ul li{line-height:34px;font-size:12px;color:#333333;border-bottom-width: 1px;border-bottom-style: solid;border-bottom-color: #CCCCCC;background-image: url(../images/li_02.gif);background-repeat: no-repeat;background-position: left center;text-indent: 18px;}
 .con22_main ul li a{ color:#333333; text-decoration:none;}
 .con22_main ul li a:hover{ color:#333333; text-decoration:underline;}
 .con22_main p{text-align: right; color:#999999; font-size:12px; line-height:30px;}
+.con22_main ul li span{ float:right; font-size:12px; color:#999999; line-height:30px;}
 .con22_main p span{ margin:0 3px 0 3px;}
 .con22_main p span a{ color:#999999; text-decoration:none;}
 .con22_main p span a:hover{ color:#FF0000;}
