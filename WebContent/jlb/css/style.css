@@ -1,7 +1,8 @@
 
 /*fwxm*/
 
-.con20{ width:1000px; min-height:403px; height:auto !important;  margin-top:10px;}
+/* .con20{ width:1000px; min-height:403px; height:auto !important;  margin-top:10px;} */
+.con20{ width:1000px; min-height:403px; height:auto !important;  margin-top:10px; max-width:1000px;_width:expression((document.documentElement.clientWidth||document.body.clientWidth)<1000?"1000px":"");overflow:hidden;}
 .con21{ width:116px; height:320px; float:left; margin-right:10px; background-image:url(../images/pic_21.jpg); padding:83px 0 0 81px;}
 .con21 ul{list-style-type: none;}
 .con21 ul li{ height:60px; width:121px;margin:0 0 20px 0;}
@@ -10,9 +11,10 @@
 .con21 ul li h2 a:hover{font-size:18px;font-weight:bold;color:#FF6600;line-height:30px;text-decoration:none;font-style: oblique;}
 #link_text{font-size:18px;font-weight:bold;color:#FF6600;line-height:30px;text-decoration:none;font-style: oblique;}
 .con21 ul li h3{font-size:11px;line-height:24px;color: #999999;}
-.con22{ width:793px; min-height:402px; height:auto !important; float:left;}
+/* .con22{ width:793px; min-height:402px; height:auto !important; float:left;} */
+.con22{ width:793px; min-height:403px; height:auto !important;  max-width:1000px;_width:expression((document.documentElement.clientWidth||document.body.clientWidth)<1000?"1000px":"");overflow:hidden;}
 .con22_top{width:793px;height:6px;background-image:url(../images/pic_22.jpg);background-repeat: no-repeat;background-position: left top;}
-.con22_main{width:761px;height:389px;border-right-width: 1px;border-left-width: 1px;border-right-style: solid;border-left-style: solid;border-right-color: #b3d0d9;border-left-color: #b3d0d9; padding:0 15px 0 15px;}
+.con22_main{width:761px;min-height:390px;border-right-width: 1px;border-left-width: 1px;border-right-style: solid;border-left-style: solid;border-right-color: #b3d0d9;border-left-color: #b3d0d9; padding:0 15px 0 15px;}
 .con22_main ul{ list-style-type:none;}
 .con22_main ul li{line-height:34px;font-size:12px;color:#333333;border-bottom-width: 1px;border-bottom-style: solid;border-bottom-color: #CCCCCC;background-image: url(../images/li_02.gif);background-repeat: no-repeat;background-position: left center;text-indent: 18px;}
 .con22_main ul li a{ color:#333333; text-decoration:none;}

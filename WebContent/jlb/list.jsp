@@ -82,7 +82,7 @@ function getArticleListByPage(aid,pageNo,start){
 					var num = json.rows.length;
 					var aid = "";
 					if(num>0){
-						str+=$("#artlist").html()+"<table>";
+						str+=$("#artlist").html()+"<table><tr>";
 						for(var i=0;i<num;i++) {
 							var id = json.rows[i].id;
 							var image = json.rows[i].image;
@@ -94,21 +94,14 @@ function getArticleListByPage(aid,pageNo,start){
 								//aid = "ccgdzs.new01.n1";
 								did = id;
 							}
-							str+=$("#artlist").html()+"<td><a href=\""+url+"\"><img src="+image+" width='200' height='200'><br>"+title+"</a></td>";
+							str+=$("#artlist").html()+"<td><a href=\""+url+"\"><img src="+image+" width='140' height='110' style=\"padding:5px;border: 1px solid #CCCCCC\"><br><center style=\"margin-top:5px;\">"+title+"</center></a></td>";
+							if((i+1)%5==0){
+								str+=$("#artlist").html()+"</tr><tr>";
+							}
 						}
-						str+=$("#artlist").html()+"</table>";
+						str+=$("#artlist").html()+"</tr></table>";
 						$("#artlist").html(str);
 					}
-					var totle = json.total;
-					//分页
-					$("#pagemenu").pageMenuBar({
-						rowPerPage:parseInt(opt.offset),
-						sumRow:parseInt(totle), 
-						pageNo:parseInt(pageNo),
-						state:1,
-						func:'getArticleListByPage',
-						args:'"'+cid+'"'
-					});
 				}, 
 				"json");
 	}else{
@@ -180,7 +173,7 @@ function getArticle_cgal(divid,size,opt){
 			"json");
 };
 
-getArticle_cgal("case",21,{aid:"jlb.case",start:'0',offset:'16'}, 3);
+getArticle_cgal("case",21,{aid:"jlb.case",start:'0',offset:'100'}, 3);
 </script>
 <style type="text/css">
 /* scrollleft */

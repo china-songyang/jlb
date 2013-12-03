@@ -32,7 +32,7 @@ a:hover{color:#3366cc;text-decoration:none;}
  $(function() {
 		//获得文章列表
 		getArticleList("profile",450,{aid:"jlb.profile",start:'0',offset:'1'}, 1);
-		getArticle_zxzx("news",16,{aid:"jlb.information ",start:'0',offset:'6'}, 2);
+		getArticle_zxzx("news",14,{aid:"jlb.information ",start:'0',offset:'6'}, 2);
 		getArticleList("service",18,{aid:"jlb.service",start:'0',offset:'6'}, 2);
 		getArticleList("support",18,{aid:"jlb.support",start:'0',offset:'6'}, 2);
 		getArticleList("download",21,{aid:"jlb.download",start:'0',offset:'6'}, 2);
