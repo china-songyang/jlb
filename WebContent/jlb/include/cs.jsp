@@ -4,7 +4,7 @@
 <div id="KeFuDiv" class="KeFuDiv">
   <div><img src="<%=request.getContextPath()%>/jlb/images/up_001.gif" width="105" border="0" usemap="#Map" style="cursor:move;" title="拖动" onmousedown="MoveDiv(KeFuDiv,event);"></div>
     <div class="KeFuTitle"><a href="#" onclick="javascript:window.open('http://wpa.qq.com/msgrd?V=1&Uin=1305457111');"><img src="<%=request.getContextPath()%>/jlb/images/list_001.gif" /></a></div>
-    <div class="KeFuTitle"><a href="#" onclick="javascript:window.open('http://wpa.qq.com/msgrd?V=1&Uin=1305457111');"><img src="<%=request.getContextPath()%>/jlb/images/list_001.gif" /></a></div>  
+    <div class="KeFuTitle"><a href="#" onclick="javascript:window.open('http://wpa.qq.com/msgrd?V=1&Uin=1305457111');"><img src="<%=request.getContextPath()%>/jlb/images/list_003.gif" /></a></div>  
      <div class="KeFuTitle"><a href="#" onclick="javascript:window.open('http://wpa.qq.com/msgrd?V=1&Uin=1305457111');"><img src="<%=request.getContextPath()%>/jlb/images/list_002.gif" /></a></div>
 <div class="div_img"><img src="<%=request.getContextPath()%>/jlb/images/bot_001.gif" border="0"></div>
 </div>
